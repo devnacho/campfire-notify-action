@@ -28991,7 +28991,9 @@ function postCommitMessage(commit) {
 }
 function postMessage(message) {
     const messagesUrl = (0, core_1.getInput)('messages_url');
-    (0, child_process_1.execSync)(`curl -d ${JSON.stringify(message)} ${messagesUrl}`);
+    console.log('Messages URL:', messagesUrl);
+    console.log('Content:', JSON.stringify(message));
+    (0, child_process_1.execSync)(`curl -d content=${JSON.stringify(message)} ${messagesUrl}`);
 }
 
 
