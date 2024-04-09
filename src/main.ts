@@ -20,6 +20,7 @@ export async function run(): Promise<void> {
 
 function postJobFailureMessage(): void {
     const { payload } = context
+    console.log(payload);
     const headCommit: Commit = payload.head_commit
     const runName = headCommit.message.split('\n\n')[0]
     const header = `❌ <b>${runName}</b>`
